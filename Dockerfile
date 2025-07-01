@@ -14,7 +14,7 @@
 #
 # Save an image to tarball:
 #
-#   $ docker save -o baikalschool-geant4-el9.tar
+#   $ docker save -o baikalschool-geant4-el9.tar baikalschool/geant4:el9
 #
 # Load an image from tarball:
 #
