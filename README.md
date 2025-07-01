@@ -1,7 +1,9 @@
 # Instruction
 
-A docker container is used to run the Geant4 examples. Please make sure you have setup Docker environment already. 
+A Docker image is prepared to run the Geant4 examples. 
+For your convenience, it is uploaded to Docker Hub: https://hub.docker.com/r/baikalschool/geant4
 
+Please make sure you have setup Docker environment already. 
 As a reference, installation of Docker in AlmaLinux 9 will be shown. 
 
 If you are using Windows, you can consider to use WSL2 or VirtualBox. 
@@ -43,4 +45,24 @@ sudo systemctl enable --now docker
 Run hello-world in Docker:
 ```
 sudo docker run hello-world
+```
+
+## Pull and start geant4 Docker container
+
+Pull Docker image:
+```
+sudo docker pull baikalschool/geant4:el9
+```
+
+Start an instance:
+```
+sudo docker run -it baikalschool/geant4:el9 /bin/bash
+```
+
+If you have a slow network, you can consider to get a tarball from other people.
+
+Save and load:
+```
+docker save -o baikalschool-geant4-el9.tar baikalschool/geant4:el9
+docker load -i baikalschool-geant4-el9.tar
 ```
