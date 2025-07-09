@@ -135,3 +135,10 @@ Let's check if the Geant4 example and GUI works:
 
 The GUI looks like following:
 ![exampleB1 GUI](exampleB1-init.png)
+
+To simulate one event, you can click the "Run" button in the GUI toolbar, or type `/run/beamOn 1` in the command line. 
+
+If you pressed the "Run" button multiple times, you will see the particles are generated randomly. 
+You can also type `/run/beamOn 10` to simulate 10 events at once.
+
+In the GUI, you can see the particles in different colors. Different colors reprensent the charge of the particles: negative charge represented by color red; positive charge represented by the color blue; neutral charge represented by the color green.
