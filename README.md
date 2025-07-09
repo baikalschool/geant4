@@ -66,3 +66,21 @@ Save and load:
 docker save -o baikalschool-geant4-el9.tar baikalschool/geant4:el9
 docker load -i baikalschool-geant4-el9.tar
 ```
+
+## Geant4 visualization with Docker container
+
+If your system already setup X11 server, then you can configure your machine with following:
+```
+xhost +local:docker
+```
+
+Then create a container named baikal, with X11 configured:
+```
+docker run -it --name baikal -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix baikalschool/geant4:el9 /bin/bash
+```
+
+After the container is created, you can start it with following commands in the next time:
+```
+docker start baikal # if the container does not start. 
+docker exec -it baikal /bin/bash
+```
