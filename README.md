@@ -33,29 +33,29 @@ sudo dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker
 ```
 
 Install Docker:
-```
+```bash
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
 Start Docker:
-```
+```bash
 sudo systemctl enable --now docker
 ```
 
 Run hello-world in Docker:
-```
+```bash
 sudo docker run hello-world
 ```
 
 ## Pull and start geant4 Docker container
 
 Pull Docker image:
-```
+```bash
 sudo docker pull baikalschool/geant4:el9
 ```
 
 Start an instance:
-```
+```bash
 sudo docker run -it baikalschool/geant4:el9 /bin/bash
 ```
 
@@ -64,7 +64,7 @@ By default, the container is cached. If you want to auto-delete the container af
 If it is hard to download the image in your network, you can consider to get a tarball from other people.
 
 Save and load an image:
-```
+```bash
 docker save -o baikalschool-geant4-el9.tar baikalschool/geant4:el9
 docker load -i baikalschool-geant4-el9.tar
 ```
@@ -72,17 +72,17 @@ docker load -i baikalschool-geant4-el9.tar
 ## Geant4 visualization with Docker container
 
 If your system (host) already setup X11 server, then you can configure your machine with following:
-```
+```bash
 xhost +local:docker
 ```
 
 Then create a container named baikal, with X11 configured:
-```
+```bash
 docker run -it --name baikal -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix baikalschool/geant4:el9 /bin/bash
 ```
 
 After the container is created, you can start it with following commands in the next time:
-```
+```bash
 docker start baikal # if the container does not start. 
 docker exec -it baikal /bin/bash
 ```
@@ -99,12 +99,12 @@ If there is no error, you will be inside a new shell, such as:
 ```
 
 If it is the first time you start the container, you will see nothing inside the `/build` directory:
-```
+```bash
 [root@4dd0a1204699 build]# ls
 ```
 
 You can copy the example B1 from following directory:
-```
+```bash
 [root@4dd0a1204699 build]# cp -r /opt/geant4/share/Geant4/examples/basic/B1 .
 ```
 
@@ -126,3 +126,12 @@ If you see following output, that means the example is built successfully:
 [100%] Linking CXX executable exampleB1
 [100%] Built target exampleB1
 ```
+
+Let's check if the Geant4 example and GUI works:
+```bash
+[root@4dd0a1204699 build]# cd B1-build/
+[root@4dd0a1204699 B1-build]# ./exampleB1 
+```
+
+The GUI looks like following:
+![exampleB1 GUI](exampleB1-init.png)
