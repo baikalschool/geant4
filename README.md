@@ -163,5 +163,5 @@ By default, it generates a 6 MeV gamma, randomly distributed in front of the env
 This example also collect deposited energy of each step in the "scoring" volume and then calculate the 
 cumulated dose per run. 
 
-# More examples
+## More examples
 Find more examples in Geant4 Reference: https://geant4-userdoc.web.cern.ch/Doxygen/examples_doc/html/index.html
