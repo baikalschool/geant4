@@ -167,6 +167,13 @@ cumulated dose per run.
 
 This example shows the optical photon simulation in Geant4.
 
+The physics list is FTFP_BERT, with G4EmStandardPhysics_option4 for electromagnetic processes and G4OpticalPhysics for optical processes. The opitcal processes include:
+* G4Cerenkov
+* G4Scintillation
+* G4OpAbsorption
+* G4OpRayleigh
+* G4OpBoundaryProcess
+
 Build and run the example:
 ```bash
 [root@4dd0a1204699 build]# cd /build
