@@ -145,4 +145,23 @@ You can also type `/run/beamOn 10` to simulate 10 events at once.
 In the GUI, you can see the particles in different colors. Different colors reprensent the charge of the particles: negative charge represented by color red; positive charge represented by the color blue; neutral charge represented by the color green.
 
 
-## Explain the example B1
+## About the example B1
+
+This example is a simple Geant4 application that simulates the passage of particles through a detector.
+
+The geometry is defined in the `B1/src/DetectorConstruction.cc` file. 
+It creates a world volume, an envelope volume, and two volumes inside the envelope: a spherical cone and a trapezoid.
+The envelop volume is made of water, and the two volumes are made of tissue and bone. 
+The trapezoid volume is used as a scoring volume to collect the deposited energy.
+
+The default physics list is QBBC. This physics list requires data files for electromagnetic and hadronic processes.
+If you are using the Geant4 Docker image, these data files are already included in the image.
+
+The initial particles are defined in the `B1/src/PrimaryGeneratorAction.cc` file.
+By default, it generates a 6 MeV gamma, randomly distributed in front of the envelope.
+
+This example also collect deposited energy of each step in the "scoring" volume and then calculate the 
+cumulated dose per run. 
+
+# More examples
+Find more examples in Geant4 Reference: https://geant4-userdoc.web.cern.ch/Doxygen/examples_doc/html/index.html
