@@ -83,8 +83,9 @@ docker run -it --name baikal -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-uni
 
 After the container is created, you can start it with following commands in the next time:
 ```bash
+xhost +local:docker # This is necessary if need GUI
 docker start baikal # if the container does not start. 
-docker exec -it baikal /bin/bash
+docker exec -it baikal /bin/bash # when a container is running, you can run it multiple times.
 ```
 
 ## Build and run the first example B1
@@ -142,3 +143,6 @@ If you pressed the "Run" button multiple times, you will see the particles are g
 You can also type `/run/beamOn 10` to simulate 10 events at once.
 
 In the GUI, you can see the particles in different colors. Different colors reprensent the charge of the particles: negative charge represented by color red; positive charge represented by the color blue; neutral charge represented by the color green.
+
+
+## Explain the example B1
