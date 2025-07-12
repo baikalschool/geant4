@@ -169,6 +169,11 @@ This example shows the optical photon simulation in Geant4.
 
 By default, the geometry is constructed in the `OpNovice/src/OpNoviceDetectorConstruction.cc` file.
 It also supports the GDML geometry file, which is constructed in the `OpNovice/src/OpNoviceGDMLDetectorConstruction.cc` file.
+The geometry structure:
+* world volume
+* experimental hall volume
+* tank volume
+* bubble volume
 
 The physics list is FTFP_BERT, with G4EmStandardPhysics_option4 for electromagnetic processes and G4OpticalPhysics for optical processes. The opitcal processes include:
 * G4Cerenkov
