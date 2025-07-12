@@ -171,9 +171,12 @@ By default, the geometry is constructed in the `OpNovice/src/OpNoviceDetectorCon
 It also supports the GDML geometry file, which is constructed in the `OpNovice/src/OpNoviceGDMLDetectorConstruction.cc` file.
 The geometry structure:
 * world volume
-* experimental hall volume
-* tank volume
-* bubble volume
+* experimental hall volume, Air
+* tank volume, Water
+* bubble volume, Air
+As there are optical processes, the materials need to define the optical properties, such as refractive index and absorption length.
+There are also optical surfaces: one is between the water tank and experimental hall, 
+and another is between the bubble and water tank. 
 
 The physics list is FTFP_BERT, with G4EmStandardPhysics_option4 for electromagnetic processes and G4OpticalPhysics for optical processes. The opitcal processes include:
 * G4Cerenkov
