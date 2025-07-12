@@ -177,6 +177,8 @@ Build and run the example:
 [root@4dd0a1204699 OpNovice-build]# ./OpNovice
 ```
 
+Similar to the example B1, you can click the "Run" button in the GUI toolbar, or type `/run/beamOn 1` in the command line to simulate one event.
+![exampleOpNovice GUI](exampleOpNovice-optical-photon.png)
 
 ## More examples
 Find more examples in Geant4 Reference: https://geant4-userdoc.web.cern.ch/Doxygen/examples_doc/html/index.html
