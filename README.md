@@ -185,6 +185,9 @@ The physics list is FTFP_BERT, with G4EmStandardPhysics_option4 for electromagne
 * G4OpRayleigh
 * G4OpBoundaryProcess
 
+The initial particles are defined in the `OpNovice/src/OpNovicePrimaryGeneratorAction.cc` file.
+By default, it generates a 500 keV positron at center.
+
 Build and run the example:
 ```bash
 [root@4dd0a1204699 build]# cd /build
