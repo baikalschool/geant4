@@ -145,7 +145,7 @@ You can also type `/run/beamOn 10` to simulate 10 events at once.
 In the GUI, you can see the particles in different colors. Different colors reprensent the charge of the particles: negative charge represented by color red; positive charge represented by the color blue; neutral charge represented by the color green.
 
 
-## About the example B1
+## Example B1
 
 This example is a simple Geant4 application that simulates the passage of particles through a detector.
 
@@ -162,6 +162,21 @@ By default, it generates a 6 MeV gamma, randomly distributed in front of the env
 
 This example also collect deposited energy of each step in the "scoring" volume and then calculate the 
 cumulated dose per run. 
+
+## Example OpNovice
+
+This example shows the optical photon simulation in Geant4.
+
+Build and run the example:
+```bash
+[root@4dd0a1204699 build]# cd /build
+[root@4dd0a1204699 build]# cp -r /opt/geant4/share/Geant4/examples/extended/optical/OpNovice .
+[root@4dd0a1204699 build]# cmake -S OpNovice -B OpNovice-build
+[root@4dd0a1204699 build]# cmake --build OpNovice-build
+[root@4dd0a1204699 build]# cd OpNovice-build/
+[root@4dd0a1204699 OpNovice-build]# ./OpNovice
+```
+
 
 ## More examples
 Find more examples in Geant4 Reference: https://geant4-userdoc.web.cern.ch/Doxygen/examples_doc/html/index.html
